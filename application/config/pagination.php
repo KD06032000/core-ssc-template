@@ -1,0 +1,21 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+$config['last_link'] = FALSE;
+$config['first_link'] = FALSE;
+$config['use_page_numbers'] = TRUE;
+$config['reuse_query_string'] = TRUE;
+$config['num_links'] = 3;
+$config['full_tag_open'] = '<ul class="pagination justify-content-center">';
+$config['full_tag_close'] = '</ul>';
+$config['first_tag_open'] = '<span class="firstlink">';
+$config['first_tag_close'] = '</span>';
+$config['next_link'] = '<i class="fal fa-chevron-right"></i>';
+$config['next_tag_open'] = '<li class="page-item">';
+$config['next_tag_close'] = '</li>';
+$config['prev_link'] = '<i class="fal fa-chevron-left"></i>';
+$config['prev_tag_open'] = '<li class="page-item">';
+$config['prev_tag_close'] = '</li>';
+$config['cur_tag_open'] = '<li  class="page-item active"><span class="page-link">';
+$config['cur_tag_close'] = '</span></li>';
+$config['num_tag_open'] = '<li class="page-item">';
+$config['num_tag_close'] = '</li>';

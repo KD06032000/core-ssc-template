@@ -1,0 +1,27 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+//form
+$lang['valid_email'] = 'Email không hợp lệ';
+$lang['empty_email'] = 'Email không được để trống';
+$lang['login_success'] = 'Đăng nhập thành công';
+$lang['lock_user'] = 'Tài khoản của bạn đã bị khóa';
+$lang['not_found_user'] = 'Tài khoản không tồn tại! Vui lòng kiểm tra lại thông tin.';
+$lang['error_method_api'] = 'Vui lòng kiểm tra method API.';
+$lang['message_unsuccess'] = 'Vui lòng kiểm tra lại thông tin!';
+$lang['register_success'] = 'Đăng ký thành công !';
+$lang['empty_login'] = 'Vui lòng điền đầy đủ thông tin đăng nhập';
+$lang['empty_fcm_id'] = 'Fcm_id không được để trống';
+$lang['empty_phone'] = 'Số điện thoại không được để trống';
+$lang['valid_phone_length'] = 'Số điện thoại phải từ 6-12 số';
+$lang['valid_phone_is_number'] = 'Số điện thoại phải là kiểu số';
+$lang['empty_password'] = 'Mật khẩu không được để trống';
+$lang['valid_password_length'] = 'MMật khẩu phải từ 6-32 ký tự';
+$lang['logout_success'] = 'Đăng xuất thành công!';
+$lang['reset_pass_success'] = 'Reset mật khẩu thành công!';
+$lang['reset_pass_error'] = 'Reset mật khẩu không thành công!';
+$lang['update_success'] = 'Cập nhật thành công!';
+$lang['update_unsuccess'] = 'Cập nhật không thành công!';
+$lang['empty_token'] = 'Token không được trống!';
+$lang['not_account'] = 'Tài khoản không tồn tại hoặc đang bị khóa!';
+$lang['empty_identity'] = 'Email là bắt buộc.';
+$lang['empty_pass'] = 'Mật khẩu là bắt buộc.';
+$lang['empty_group_id'] = 'Loại khách hàng là bắt buộc.';

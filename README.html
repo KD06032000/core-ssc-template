@@ -1,0 +1,134 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="cms-ssc">CMS SSC</h1>
+<p><strong>Version 4.2.0</strong></p>
+<h2 id="stack">Stack</h2>
+<ul>
+<li><p>CI 3 and PHP 5.6+</p>
+</li>
+<li><p>MySQL 5.7+</p>
+</li>
+</ul>
+<h2 id="feature">Feature</h2>
+<ul>
+<li>Command setup demo for developer</li>
+</ul>
+<h2 id="development">Development</h2>
+<h4 id="c-i-t-m-i-tr-ng">Cài đặt môi trường</h4>
+<pre><code class="lang-bash">$ git clone git@gitlab.com:apecsoftasia/cms-core.git /path/to/proj_dir
+
+Với https
+
+$ git clone https://gitlab.com/apecsoftasia/cms-core.git /path/to/proj_dir
+
+$ cd /path/to/proj_dir
+
+$ git checkout dev &amp;&amp; git pull
+
+$ composer install 
+
+</code></pre>
+<h4 id="c-i-t-website">cài đặt website</h4>
+<ul>
+<li>import file db trong folder <code>db</code> thư mục ngoài cùng.</li>
+<li>Tạo file <code>config.php</code> thư mục ngoài cùng. Copy file <code>config_simple</code> vào file <code>config.php</code> và cài đặt thông tin để connect database </li>
+<li>tạo folder <code>config</code> cùng thư mục file <code>config.php</code> và tạo file <code>settings.cfg</code> (file này sữ lưu thông tin cấu hình chung của website)</li>
+<li>Tạo folder <code>media</code> trong <code>public</code></li>
+</ul>
+<h4 id="th-ng-tin-ng-nh-p-admin">Thông tin đăng nhập admin</h4>
+<p>url: <code>domain.com/admin</code></p>
+<pre><code class="lang-bash">Tài khoản đăng nhập:
+    user: admin
+    Password: ssc@2021
+
+</code></pre>
+<h3 id="qu-n-l-file-v-i-laravel-mix">Quản lý file với Laravel Mix</h3>
+<p>#####Tài liệu tham khảo: <a href="https://laravel-mix.com/">https://laravel-mix.com/</a></p>
+<ul>
+<li>Cài đặt <code>npm</code> để quản lý thư viện js</li>
+<li><p>command </p>
+<pre><code class="lang-bash">cd /path/to/proj_dir
+npm init
+</code></pre>
+<p>Lưu ý: Khi thực hiện các bước yêu cầu thì <code>enter</code> không sửa gì thêm tránh conflig</p>
+</li>
+<li><p>Config thêm, bớt file css,js</p>
+</li>
+</ul>
+<p>Cấu trúc folder mẫu</p>
+<pre><code>webpack.mix.js
+public/
+├── plugins/
+│   ├── toastr/toastr.min.css
+│   └── select2/css/select2.min.css
+├── css/
+│   ├── bootstrap.min.css
+│   ├── slick.css
+│   ├── main.css
+│   ├── custom.css
+│   └── app.css
+├── js/
+│   ├── jquery.js
+│   ├── bootstrap.js
+│   ├── popper.js
+│   ├── script.js
+│   ├── custom.js
+│   └── app.js
+└── fonts/
+    ├── elegantIcon/elegantIcon.css
+    └── fonts/fontawesome-pro-5.8.2-web/css/all.min.css
+</code></pre><p>Để thêm bớt được file js,css thì ta sẽ thêm file vào hàm  trong file <code>webpack.mix.js</code></p>
+<h4 id="v-i-js">Với js</h4>
+<p><code>mix.combine(input,output)</code> (trong đó: <strong>Input</strong> là các file js cần mix có thể 1 hoặc nhiều file, <strong>Output</strong> là file được mix từ các file thành 1)</p>
+<p>Ví Dụ:</p>
+<pre><code class="lang-bash">mix.combine([
+  &#39;public/js/jquery.js&#39;,
+  &#39;public/js/custom.js&#39;,
+], &#39;public/js/app.js&#39;);
+
+</code></pre>
+<h2 id="v-i-css">Với css</h2>
+<p>Các tham số cũng giống như thêm js <code>mix.styles(input,output)</code></p>
+<pre><code class="lang-bash">mix.styles(
+  [
+    &#39;public/plugins/toastr/toastr.min.css&#39;,
+    &#39;public/plugins/select2/css/select2.min.css&#39;,
+    &#39;public/fonts/fontawesome-pro-5.8.2-web/css/all.min.css&#39;,
+    &#39;public/fonts/elegantIcon/elegantIcon.css&#39;,
+    &#39;public/css/bootstrap.min.css&#39;,
+    &#39;public/css/slick.css&#39;,
+    &#39;public/css/main.css&#39;,
+    &#39;public/css/custom.css&#39;,
+  ],
+  &#39;public/css/app.css&#39;)
+</code></pre>
+<ul>
+<li>Lưu ý: Khi thêm 1 fonts hay bất kỳ file css mà load đường dẫn 1 font, ảnh ở folder # không cùng cấp với folder css thì cần thêm code copy để khi mix css lại không bị lỗi font, ảnh<pre><code class="lang-bash">mix.copyDirectory(&#39;public/fonts/fontawesome-pro-5.8.2-web/webfonts/&#39;, &#39;public/webfonts/&#39;);
+</code></pre>
+</li>
+</ul>
+<h4 id="ch-y-wabpack-">Chạy wabpack:</h4>
+<ul>
+<li>Build file trên môi trường development<pre><code>npm run dev
+</code></pre></li>
+<li>build file trên môi trường production<pre><code class="lang-$xslt">npm run prod
+</code></pre>
+</li>
+<li>Auto build mỗi khi mình sửa file css,js thuộc những file mình import <pre><code class="lang-$xslt">npm run watch
+</code></pre>
+</li>
+</ul>
+<h3 id="run-check-coding-style-and-unit-test-before-commit">Run check coding style and unit test before commit</h3>
+<pre><code class="lang-bash">
+$ ./vendor/bin/phpcs    
+
+$ ./vendor/bin/phpunit
+
+</code></pre>
+
+      </body>
+    </html>

@@ -1,0 +1,108 @@
+footer{
+	background: url('http://ssc-core.test/public/media//bg-footer.jpg') no-repeat center;
+	background-size: 100% 100%;
+	padding: 70px 0 50px 0;
+	.logo-ft{
+		display: flex;
+		align-items: center;
+		height: 100%;
+		@media (max-width: 1600px) {
+			img{
+				max-width: 170px;
+			}
+		}
+	}
+	.info{
+		color: #000;
+		padding-left: 65px;
+		@media (max-width: 1600px) {
+			padding-left: 50px;
+		}
+		.title{
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+			margin-bottom: 8px;
+		}
+		p{
+			letter-spacing: 0.04em;
+			margin-bottom: 8px;
+			span{
+				font-weight: 600;
+				letter-spacing: 0.025em;
+			}
+		}
+		ul{
+			li{
+				display: inline-block;
+				margin-right: 50px;
+				span{
+					font-weight: 600;
+				}
+			}
+		}
+	}
+	.connect{
+		color: #000;
+		.title{
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 0.025em;
+			text-align: right;
+			margin-bottom: 8px;
+		}
+		ul{
+			text-align: right;
+			li{
+				display: inline-block;
+				margin-left: 10px;
+				a{
+					display: block;
+					transition: 0.3s;
+					&:hover{
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+	footer .connect .title{
+		font-size: 18px;
+	}
+}
+@media (max-width: 991px) {
+	footer {
+		background-size: cover;
+		.info{
+			padding-left: 0;
+			padding: 15px 0;
+		}
+		.connect{
+			.title{
+				text-align: left;
+			}
+			ul{
+				text-align: left;
+				li{
+					margin-left: 0;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	footer{
+		padding: 35px 0 30px 0;
+		.logo-ft img{
+			max-width: 140px;
+		}
+		.info{
+			.title{
+				font-size: 18px;
+			}
+		}
+	}
+}

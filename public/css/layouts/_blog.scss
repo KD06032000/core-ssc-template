@@ -1,0 +1,126 @@
+.page-pri{
+	padding: 80px 0 20px 0;
+}
+.tabs-news{
+	.nav-tabs{
+		justify-content: center;
+		border-bottom: none;
+		margin-bottom: 60px;
+		.nav-item{
+			margin-bottom: 0;
+			overflow: hidden;
+			border: 1px solid $c2;
+			&:first-child{
+				border-radius: 20px 0 0 20px;
+			}
+			&:last-child{
+				border-radius: 0 20px 20px 0;
+			}
+		}
+		.nav-link{
+			padding: 15px 60px;
+			border-radius: 0;
+			border: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			background-color: #fff;
+			color: $c2;
+			transition: 0.3s;
+			letter-spacing: 0.02em;
+			&.active{
+				color: $c3;
+				background-color: $c2;
+			}
+		}
+	}
+}
+.detail-post{
+	padding-bottom: 30px;
+	.control-post{
+		margin: 20px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.left{
+			color: #ff8d00;
+			font-weight: 600;
+			text-transform: uppercase;
+			.time{
+				display: inline-block;
+				margin-right: 15px;
+				i{
+					margin-right: 8px;
+				}
+			}
+		}
+		.right{
+			display: inline-flex;
+			align-items: center;
+			.fb-like{
+				display: inline-flex;
+				height: 20px;
+				margin-right: 10px;
+			}
+		}
+	}
+	.s-content{
+		color: #545a63;
+	}
+}
+.head-post{
+	text-align: center;
+	letter-spacing: 0.03em;
+	font-weight: 700;
+	margin: 0 auto;
+	max-width: 86%;
+}
+.jssocials-shares{
+	margin: 0;
+}
+.jssocials-share-link{
+	border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+@media (max-width: 1600px) {
+	.page-pri{
+		padding-top: 50px;
+	}
+	.tabs-news .nav-tabs{
+		margin-bottom: 40px;
+	}
+	
+}
+@media (max-width: 991px) {
+	.head-post{
+		max-width: 100%;
+		font-size: 28px;
+	}
+}
+@media (max-width: 767px) {
+	.page-pri{
+		padding-top: 30px;
+		padding-bottom: 0;
+	}
+	.tabs-news .nav-tabs{
+		margin-bottom: 30px;
+	}
+	.tabs-news .nav-tabs .nav-link{
+		padding: 12px 30px;
+	}
+	.head-post{
+		font-size: 20px;
+	}
+	.detail-post .control-post{
+		display: block;
+		margin: 10px 0;
+		.left{
+			margin-bottom: 6px;
+		}
+	}
+	
+}

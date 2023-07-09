@@ -1,0 +1,2 @@
+<button type="button" class="btn btn-danger pull-left" data-dismiss="modal"><?php echo lang('btn_cancel'); ?></button>
+<button type="button" id="btnSave" onclick="save()" class="btn btn-primary "><?php echo lang('btn_save'); ?></button>
